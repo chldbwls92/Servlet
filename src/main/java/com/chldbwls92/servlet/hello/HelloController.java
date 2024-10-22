@@ -2,6 +2,8 @@ package com.chldbwls92.servlet.hello;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +18,7 @@ public class HelloController extends HttpServlet { //tomcat이용할때 저거 �
 																			// 자주 발생 안 하는 건 throws로
 		PrintWriter out = response.getWriter();
 		out.println("Hello World!!"); //response를 통해서 실행됨
+		List<String>animalList = new ArrayList<>();
 	}
 	
 

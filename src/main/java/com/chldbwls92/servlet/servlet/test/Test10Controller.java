@@ -22,6 +22,8 @@ public class Test10Controller extends HttpServlet {
 			put("name", "김인규");
 		}
 	};
+	
+	
 //	연습 문제
 //	Post Method 2
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
