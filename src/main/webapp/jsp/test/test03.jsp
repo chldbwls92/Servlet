@@ -21,7 +21,7 @@
 	<%
 		// 현재 시간과 날짜 구할 수 있는 ..
 		Date now = new Date();
-	 	String nowDate = now.toString();
+
 	 	
 	 	// 내가 원하는 형태로 바꿀 수 있는
 		SimpleDateFormat day = new SimpleDateFormat("오늘 날짜 yyyy년 MM월 dd일");
@@ -29,12 +29,6 @@
 	 	// 문자열로 바꿔줘야돼!
 		String dayString = day.format(now);
 	%>
-	<div vlaue="day"><%= dayString %></div>
-	
-	<!-- 하나의 "파라미터"로 전달받기!!!!!!
-		 파라미터의 규격은 여기서 결정해서 ....
-		 요 이름의 파라미터로 이걸 보여줘야지~ 이걸 보여줘야지~ -->
-	
 	<!--  현재 시간 구하기 -->
 	<%
 	// 내가 원하는 형태로 바꿀 수 있는
@@ -43,8 +37,31 @@
 		 	// 문자열로 바꿔줘야돼!
 			String timeString = time.format(now);
 	%>
-	<div value="time"><%= timeString %></div>
 	
+	
+	<%
+		// 어떤 정보를 보여줄지 파라미터를 통해 전달받는다
+		// 시간을 보여줄지, 날짜를 보여줄지
+		// what : time - 시간, day - 날짜
+		
+		String what = request.getParameter("what");
+		String result = null;
+		if(what.equals("time")) {
+			result = timeString;
+		} else if(what.equals("day")) {
+			result = dayString;
+		}
+	
+	%>
+	<!-- 하나의 "파라미터"로 전달받기!!!!!!
+		 파라미터의 규격은 여기서 결정해서 ....
+		 요 이름의 파라미터로 이걸 보여줘야지~ 이걸 보여줘야지~ 
+		 => sumit
+	-->
+		 
+	<div class="container">
+		<div class="display-4"><%= result %></div>
+	</div>
 	
 	
 	

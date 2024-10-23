@@ -12,7 +12,7 @@ import javax.servlet.annotation.WebFilter;
 
 //web 서블릿처럼 해주는 어노테이션이 있음
 // 해당 필터가 거쳐갈 서블릿에 대한 path 범위
-@WebFilter("/servlet/*") // 서블릿으로 시작하는 거만 이게 동작한다~   /*은 모든 필터!   * = 전체!
+@WebFilter("/*") // 서블릿으로 시작하는 거만 이게 동작한다~   /*은 모든 필터!   * = 전체!
 public class EncodingFilter implements Filter {
 	
 	@Override
