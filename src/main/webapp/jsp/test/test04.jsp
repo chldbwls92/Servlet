@@ -51,28 +51,7 @@
 	
 	</biv>
 	
-<!-- 
 
-	 	int number3 = Integer.parseInt(number1);
-	 	int number4 = Integer.parseInt(number2);
-	 %>
-	
-	
-		// 계산하기
-		int Intresult;
-		String result = null;
-		if(operator.equals("+")) {
-			Intresult = number3 + number4;
-		} else if(operator.equals("-")) {
-			Intresult = number3 - number4;
-		} else {
-			Intresult = number3 * number4;
-		}
-		result = Integer.toString(Intresult);
-	%>
-
-
- -->
 
 
 
