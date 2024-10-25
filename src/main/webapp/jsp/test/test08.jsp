@@ -61,24 +61,27 @@
 	
 	<%
 		// 파라미터로 책 id를 받아!
-		String id = request.getParameter("id");
-		String result = null;
+		int id = Integer.parseInt(request.getParameter("id"));
 	%>
 	
 
-	<div class="container d-flex">
-		<div> <!-- 이미지 넣을 곳 -->
-			<!-- 이미지 링크 -->
-			<img src="http://image.kyobobook.co.kr/images/book/xlarge/194/x9788972756194.jpg">
-		</div>
-		<div>	<!-- 정보 넣을 곳 -->
-			<div class="text-bold">책 제목</div>
-			<div class="text-info">작가이름</div>
-			<div class="text-secondary">출판사</div>
-		</div>
-		
-	</div>
+	<div class="container">
+		<% for(Map<String,Object> book:list) {
+			if(id == (Integer)book.get("id")) { %>
+			<div class="d-flex">
+				<div>
+					<img src="<%= book.get("image") %>">
+				</div>
+				<div class="ml-4">
+					<div ><%= book.get("title") %></div>
+					<div class="text-info"><%= book.get("author") %></div>
+					<div ><%= book.get("publisher") %></div>
+				</div>
+			<% }
+			} %>
+			</div>
 	
+	</div>
 
 
 

@@ -55,19 +55,16 @@
 				// 리스트 돌리기
 				for(Map<String, Object> info:list) {
 					if(menu.equals(info.get("menu")) && pointFilter == null) {
+						double point = (Double)info.get("point");
+						if(pointFilter == null || point > 4.0) {
 			%>
 				<tr>
 					<td><%=info.get("menu") %></td>
 					<td><%= info.get("name") %></td>
 					<td><%= info.get("point") %></td>
-				</tr>										<!--  만약에 .. pointFilter가 4.0이상일 때 ..? -->
-			<% 		} else if(menu.equals(info.get("menu")) && pointFilter != null) { %>
-				<tr>
-					<td><%=info.get("menu") %></td>
-					<td><%= info.get("name") %></td>
-					<td><%= info.get("point") %></td>
-				</tr>
-				<% 	
+				</tr>					
+			
+				<% 				}
 							}
 					}
 						%>
