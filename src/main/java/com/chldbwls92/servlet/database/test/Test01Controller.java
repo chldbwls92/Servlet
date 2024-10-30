@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.chldbwls92.servlet.common.MysqlService;
 
-@WebServlet("")
+@WebServlet("/db/user/create")
 public class Test01Controller extends HttpServlet {
 	
 	

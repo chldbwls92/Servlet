@@ -13,7 +13,29 @@ import java.util.Map;
 
 public class MysqlService {
 	
+	
+	// 이 클래스 객체를 관리할 변수가 필요해! = 멤버변수
+	// 처음에 값이 없다는 것을 명확하게 알려주기 위해 null
+	
+	// 클래스를 설계하는 입장에서
+	// 해당 클래스에 대한 객체 생성을 직접 관리하고,
+	// "하나의 객체"를 공유해서 사용하도록 구성한다. 무분별하게 생성되면 안 되기 때문에!
+	// Singelton pattern (Design pattern)
+	private static MysqlService mysqlService = null;
+	
 	private Connection connection;
+	
+	// 자신 클래스에 대한 객체를 돌려주는 메소드
+	// static : 객체 생성 없이 사용하도록 하는 메소드, 멤버 변수
+	// 객체가 생성이 돼야 멤버 변수를 사용할 수 있기 때문에 멤버변수도 static으로 바꿔주면 오류 안 남
+	public static MysqlService getInstance() {
+		if(mysqlService == null) { // 이 조건문이 없으면 계속 생성하기 때문에 null일 경우만
+			mysqlService = new MysqlService(); // 자기 자신의 메소드 안에서 생성! 사용하는 곳에서 생성x
+		}
+		
+		return mysqlService;  //여기서 관리하고 있는 멤버변수 리턴
+	}
+	
 	
 	// 접속 기능
 	public void connect() {

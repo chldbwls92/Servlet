@@ -17,7 +17,7 @@
 		String pointFilter = request.getParameter("pointFilter");
 	%>
 
-	<% 			// 오브젝트 클래스로 업캐스팅 해야돼
+	<% 			// 오브젝트 클래스는 업캐스팅 되어있기 때문에 다운캐스팅 해야돼
 		List<Map<String, Object>> list = new ArrayList<>();
 		Map<String, Object> map = new HashMap<String, Object>() {{ put("name", "버거킹"); put("menu", "햄버거"); put("point", 4.3); } };
 		list.add(map);
